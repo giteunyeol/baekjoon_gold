@@ -1,2 +1,0 @@
-# baekjoon_gold
-gild
