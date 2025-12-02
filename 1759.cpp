@@ -7,25 +7,25 @@ char str[20];
 char arr[20]; // 문자를 넣었다 뺐다 할 배열
 int l, c;     // L개는 몇개를 고르는지, C개는 총 몇번 입력받는지
 // 한개의 모음 이상, 두개의 자음 이상.
-int consonants, vowel; // 자음이랑 모음 카운트
 
 // 조합임. 순열 X
 void solve(int cur, int start)
 {
     if (cur == l) // basecase
     {
+        int consonants = 0, vowel = 0; // 자음이랑 모음 카운트
         for (int i = 0; i < l; i++)
         {
             if (arr[i] == 'a' || arr[i] == 'e' || arr[i] == 'i' || arr[i] == 'o' || arr[i] == 'u')
             {
-                consonants++;
+                vowel++;
             }
             else
             {
-                vowel++;
+                consonants++;
             }
         }
-        if (consonants >= 1 && vowel >= 2)
+        if (consonants >= 2 && vowel >= 1)
         {
             for (int i = 0; i < l; i++)
             {
